@@ -19,9 +19,13 @@ end
 
 get("/wizard_add") do
   @first_num = params.fetch("first_num").to_f
-  @second_num = params.fetch("")
+  @second_num = params.fetch("second_num").to_f
 
   @result = @first_num + @second_num
+
+  #Result as a Float
+  @result_float = @result.to_f
+  
   erb(:add_result)
 end
 
