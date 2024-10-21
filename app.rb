@@ -61,10 +61,20 @@ get("/wizard_multiply") do
   erb(:mult_result)
 end
 
+
+
 get("/divide") do
   erb(:div_form)
 end
 
 get("/wizard_divide") do
+  @first_num = params.fetch("first_num").to_f
+  @second_num = params.fetch("second_num").to_f
+
+  @result = @first_num / @second_num
+
+  #Result as a Float
+  @result_float = @result.to_f
+
   erb(:div_result)
 end
